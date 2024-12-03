@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PokemonContext } from "../../context/PokemonContext";
 import { usePagination } from "../../hooks/usePagination";
-import { PokemonType } from "../../interfaces/types";
+import { PokeType } from "../../interfaces/types";
 import { background } from "../../utils/colors";
 import {
   OrdersContainer,
@@ -21,7 +21,7 @@ export const Filters = () => {
     useContext(PokemonContext);
   const { changePage } = usePagination();
 
-  const onChangeType = (type: PokemonType) => {
+  const onChangeType = (type: PokeType) => {
     changePage(1);
     navigate("/?page=1");
     changeTypeSelected(type);
@@ -43,7 +43,7 @@ export const Filters = () => {
         )}
         {open && types && (
           <Orders>
-            {types.map((type: PokemonType) => (
+            {types.map((type: PokeType) => (
               <div
                 key={type.name}
                 className="order"

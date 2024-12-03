@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext } from "react";
 import { Filters } from "../../components/Filters";
 import { Pagination } from "../../components/Pagination";
@@ -12,7 +13,6 @@ import {
   HeaderTitle,
   FavoritesLink,
 } from "./styles";
-import React from "react";
 
 export const Home = () => {
   const { pokemonsFiltered } = useContext(PokemonContext);

@@ -4,14 +4,14 @@ import { createContext, useEffect, useState } from "react";
 import {
   AllPokemonsResult,
   PokemonsByTypeResult,
-  PokemonType,
+  PokeType,
 } from "../interfaces/types";
 
 interface ContextProps {
-  types: PokemonType[];
-  filterSelected: PokemonType;
+  types: PokeType[];
+  filterSelected: PokeType;
   pokemonsFiltered: string[] | null;
-  changeTypeSelected: (type: PokemonType) => void;
+  changeTypeSelected: (type: PokeType) => void;
 }
 
 export const PokemonContext = createContext<ContextProps>({} as ContextProps);
@@ -19,7 +19,7 @@ export const PokemonContext = createContext<ContextProps>({} as ContextProps);
 const PokemonProvider = ({ children }: any) => {
   const allPokemonsUrl = "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0";
 
-  const defaultState: PokemonType = {
+  const defaultState: PokeType = {
     name: "Todos",
     url: allPokemonsUrl,
   };
@@ -30,7 +30,7 @@ const PokemonProvider = ({ children }: any) => {
   const [types, setTypes] = useState([defaultState]);
   const [filterSelected, setFilterSelected] = useState(defaultState);
 
-  const changeTypeSelected = async (type: PokemonType) => {
+  const changeTypeSelected = async (type: PokeType) => {
     setFilterSelected(type);
   
     if (type?.url) {
