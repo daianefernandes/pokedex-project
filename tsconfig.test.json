@@ -1,0 +1,20 @@
+{
+    "extends": "./tsconfig.app.json",
+    "compilerOptions": {
+      "module": "esnext",
+       "jsx": "react",  
+       "target": "esnext",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.d.ts",
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx"
+    ]
+  }
+  
